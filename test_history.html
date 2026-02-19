@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>History Test</title>
+</head>
+<body>
+    <h1>History Test</h1>
+    <button onclick="loadHistory()">Load History</button>
+    <div id="result"></div>
+
+    <script>
+        const API_BASE_URL = 'http://localhost:8080/api';
+        
+        async function loadHistory() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = 'Loading...';
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/history`);
+                const result = await response.json();
+                
+                if (result.success) {
+                    resultDiv.innerHTML = `<pre>${JSON.stringify(result, null, 2)}</pre>`;
+                } else {
+                    resultDiv.innerHTML = `Error: ${result.error}`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `Failed to load history: ${error.message}`;
+            }
+        }
+    </script>
+</body>
+</html>

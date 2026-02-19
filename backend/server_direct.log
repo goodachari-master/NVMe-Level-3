@@ -1,0 +1,79 @@
+[WearoutPredictor] Loaded model from models/wearout_model.pkl
+[ControllerPredictor] Loaded model from models/controller_model.pkl
+✓ Predictors loaded successfully
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [19/Feb/2026 10:02:20] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:02:32] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:04:07] "GET /api/features HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:04:33] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:04:33] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [19/Feb/2026 10:08:05] "GET /api/features HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:08:12] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:08:13] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:08:35] "OPTIONS /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:08:35] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:09:10] "GET /api/history/22 HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:09:10] "GET /api/features HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:09:14] "OPTIONS /api/predict HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:09:14] "POST /api/predict HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:09:33] "OPTIONS /api/history/22 HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:09:33] "DELETE /api/history/22 HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:09:35] "OPTIONS /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:09:35] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:09:40] "OPTIONS /api/history/23 HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:09:40] "DELETE /api/history/23 HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:09:41] "OPTIONS /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:09:41] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:09:59] "OPTIONS /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:09:59] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:10:00] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:10:01] "GET /api/features HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:10:11] "OPTIONS /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:10:11] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:10:13] "GET /api/features HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:10:20] "OPTIONS /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:10:20] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:10:26] "GET /api/features HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:10:30] "OPTIONS /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:10:30] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:10:45] "GET /api/features HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:11:26] "OPTIONS /api/predict HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:11:26] "POST /api/predict HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:13:14] "GET /api/features HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:13:17] "OPTIONS /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:13:17] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:13:18] "GET /api/features HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:13:27] "GET /api/features HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:13:29] "OPTIONS /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:13:29] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:13:30] "GET /api/features HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:13:55] "OPTIONS /api/predict HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:13:55] "POST /api/predict HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:22:17] "OPTIONS /api/predict HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:22:17] "POST /api/predict HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:24:37] "GET /api/features HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:28:48] "GET /api/features HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:28:49] "GET /api/features HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:32:52] "GET /api/features HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:32:53] "GET /api/features HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:32:54] "GET /api/features HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:35:55] "GET /api/features HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:35:57] "GET /api/features HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:35:57] "GET /api/features HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:35:57] "GET /api/features HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:36:25] "GET /api/features HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:36:31] "OPTIONS /api/predict HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:36:31] "POST /api/predict HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:36:34] "POST /api/predict HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:37:05] "OPTIONS /api/predict HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:37:05] "POST /api/predict HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:37:20] "OPTIONS /api/system-info HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:37:20] "GET /api/system-info HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:37:24] "OPTIONS /api/predict HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:37:24] "POST /api/predict HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:41:31] "OPTIONS /api/predict HTTP/1.1" 200 -
+127.0.0.1 - - [19/Feb/2026 10:41:31] "POST /api/predict HTTP/1.1" 200 -

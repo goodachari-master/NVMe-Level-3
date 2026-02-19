@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Connection Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .status { padding: 10px; margin: 10px 0; }
+        .success { background-color: #d4edda; color: #155724; }
+        .error { background-color: #f8d7da; color: #721c24; }
+        .info { background-color: #d1ecf1; color: #0c5460; }
+    </style>
+</head>
+<body>
+    <h1>Frontend-Backend Connection Test</h1>
+    
+    <div id="statusDiv" class="status info">Testing connection...</div>
+    <button id="testBtn" onclick="testConnection()">Test Connection</button>
+    <button onclick="testHistory()">Test History API</button>
+    <pre id="result"></pre>
+
+    <script>
+        const API_BASE_URL = 'http://localhost:8080/api';
+        
+        async function testConnection() {
+            const statusDiv = document.getElementById('statusDiv');
+            const resultDiv = document.getElementById('result');
+            
+            statusDiv.textContent = 'Testing basic API connection...';
+            statusDiv.className = 'status info';
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                
+                statusDiv.textContent = '✅ Basic API connection successful!';
+                statusDiv.className = 'status success';
+                resultDiv.textContent = JSON.stringify(data, null, 2);
+            } catch (error) {
+                statusDiv.textContent = `❌ Connection failed: ${error.message}`;
+                statusDiv.className = 'status error';
+                resultDiv.textContent = `Error: ${error.stack}`;
+            }
+        }
+        
+        async function testHistory() {
+            const statusDiv = document.getElementById('statusDiv');
+            const resultDiv = document.getElementById('result');
+            
+            statusDiv.textContent = 'Testing history API connection...';
+            statusDiv.className = 'status info';
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/history`, {
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json',
+                    },
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                
+                statusDiv.textContent = `✅ History API connection successful! Got ${data.data?.length || 0} records`;
+                statusDiv.className = 'status success';
+                resultDiv.textContent = JSON.stringify({
+                    success: data.success,
+                    total_count: data.total_count,
+                    count: data.count,
+                    sample_record: data.data && data.data.length > 0 ? data.data[0] : 'No records'
+                }, null, 2);
+            } catch (error) {
+                statusDiv.textContent = `❌ History API failed: ${error.message}`;
+                statusDiv.className = 'status error';
+                resultDiv.textContent = `Error: ${error.stack}`;
+            }
+        }
+        
+        // Run basic test on page load
+        window.onload = function() {
+            testConnection();
+        };
+    </script>
+</body>
+</html>
