@@ -18,7 +18,7 @@ warnings.filterwarnings('ignore')
 DB_CONFIG = {
     'host': 'localhost',
     'user': 'root',        # Change this to your MySQL username
-    'password': 'Veejnas@4002',         # Change this to your MySQL password
+    'password': '',         # Change this to your MySQL password
     'database': 'nvme_failure_db'
 }
 
