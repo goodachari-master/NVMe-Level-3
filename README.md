@@ -2,6 +2,65 @@
 
 Before running this code, make sure **Smartmontools / smartctl** is already installed on your system.
 
+## 📦 Database Setup
+
+This project uses a MySQL database named:
+
+```sql
+nvme_failure_db
+```
+## 🛠 Create Database & Table
+
+Run the following SQL in MySQL:
+```sql
+CREATE DATABASE IF NOT EXISTS nvme_failure_db;
+USE nvme_failure_db;
+```
+```sql
+CREATE TABLE IF NOT EXISTS input_history (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    timestamp DATETIME NOT NULL,
+    power_on_hours FLOAT,
+    total_tbw_tb FLOAT,
+    total_tbr_tb FLOAT,
+    temperature_c FLOAT,
+    percent_life_used FLOAT,
+    media_errors INT,
+    unsafe_shutdowns INT,
+    crc_errors INT,
+    read_error_rate FLOAT,
+    write_error_rate FLOAT,
+    temp_threshold FLOAT,
+    data_source VARCHAR(50),
+    notes TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+## 🔐 Backend Database Configuration
+
+File:
+```path
+backend/app.py
+```
+Update your database configuration:
+```python
+DB_CONFIG = {
+    'host': 'localhost',
+    'user': 'root',
+    'password': 'YOUR_MYSQL_PASSWORD',  # ⚠️ Replace with your MySQL password
+    'database': 'nvme_failure_db'
+}
+```
+
+Example:
+```python
+DB_CONFIG = {
+    'host': 'localhost',
+    'user': 'root',
+    'password': 'root123',
+    'database': 'nvme_failure_db'
+}
+```
 ---
 # Windows SMART Extraction Fix (system_info_extractor.py)
 
@@ -157,6 +216,7 @@ http://localhost:8000/
 
 ## web page when data is entered and predict all features is clicked
 <img width="1620" height="1396" alt="image" src="https://github.com/user-attachments/assets/6be36a76-2f53-43d0-88d9-c8e92c10dc7e" />
+
 
 
 
